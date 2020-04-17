@@ -9,7 +9,7 @@ object GraphInput{
         var j = 0
 
         for (line <- Source.fromFile(fname).getLines) {
-            var row = line.split(", ")
+            var row = line.split(" ")
             var rowMat = new Array[Int](n)
             var i = 0
             for(elem <- row){

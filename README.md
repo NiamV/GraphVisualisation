@@ -14,3 +14,9 @@ To run the pygame animation:
 ```
 python DijkstraVisual.py
 ```
+
+To create a random graph and place it in the `AdjMatrix.txt` file, two arguments are needed. The first is the number of nodes in the graph and the second is the maximum weight of any edge.
+
+```
+python randomGraph 8 6 > AdjMatrix.txt
+```

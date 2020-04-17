@@ -6,7 +6,7 @@ def graphInput(fname):
 
     for row in data:
         rowMat = []
-        rowSplit = row.split(", ")
+        rowSplit = row.split(" ")
         for elem in rowSplit:
             if elem == 'MAX':
                 rowMat.append("MAX")
