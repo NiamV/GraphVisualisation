@@ -1,21 +1,19 @@
 import math
 import cmath
 
-# Dijkstra's Graph
-
-g = [
-    ["MAX", 4, 2, "MAX", "MAX"],
-    ["MAX", "MAX", 3, 2, 1],
-    ["MAX", 1, "MAX", 4, 5],
-    ["MAX", "MAX", "MAX", "MAX", "MAX"],
-    ["MAX", "MAX", "MAX", 1, "MAX"]
-]
-n = 5
-
 # Complete Graph
 
 # n = 5
 # g = [ [1 for i in range(0, n)] for j in range(0,n)]
+
+#---------------------------------------------------------
+
+# Graph Input
+
+from GraphInput import graphInput
+
+g = graphInput("AdjMatrix.txt")
+n = len(g)
 
 #---------------------------------------------------------
 
@@ -24,8 +22,6 @@ n = 5
 from DijkstraInput import convert
 
 results = convert("DijkstraOutput.txt")
-print(results)
-
 
 #---------------------------------------------------------
 
@@ -128,17 +124,13 @@ def frame(step = []):
 
         pygame.draw.circle(screen, colour, (math.floor(500 + 300*math.sin(angle)), math.floor(500 - 300*math.cos(angle))), 10)
         
-        screen.blit(font.render(str(d[i]), True, (0,0,0)), (math.floor(500 + 400*math.sin(angle)), math.floor(500 - 400*math.cos(angle))))
+        screen.blit(font.render(str(d[i]), True, (0,0,0)), (math.floor(500 + 350*math.sin(angle)), math.floor(500 - 350*math.cos(angle))))
 
     for j in range(0, n):
         for k in range(0,n):
             drawArrow(j, k, False, False, False)
 
-    
-
     drawArrow(source, target, True, changed, False)
-    
-    print(pi)
 
     for l in range(0, n):
         if(pi[l] != "NIL"):
@@ -164,7 +156,6 @@ while running:
                     if(frameNo < len(results) - 1):
                         frameNo += 1
                         print(frameNo)
-                        print(results[frameNo])
 
                         screen.fill((255, 255, 255))
                         frame(results[frameNo])

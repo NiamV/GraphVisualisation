@@ -45,4 +45,5 @@ def convert(fname):
                             toAdd2[i] = int(currentElem)
                     currentIter.append(toAdd2)
 
+    iterations.append(currentIter)
     return iterations
